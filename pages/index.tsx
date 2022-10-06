@@ -38,7 +38,7 @@ export default function Home({ posts }) {
         {"I'm Happy, I'd like to share my thoughts with you"}
       </p>
       <div className={styles.grid}>
-          {posts.map((post) => (
+          {posts.filter(post => post.properties['Status'].select.name === 'published').map((post) => (
             <span key={post.id} className={styles.card}>
               <Link href={`/${post.id}`}>
                 <a>
