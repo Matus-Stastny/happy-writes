@@ -11,8 +11,8 @@ export default function Post({ page, blocks }) {
     return <div />;
   }
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
+    <div className="container">
+      <main>
       <article>
         <h1>
           <Text text={page.properties.Name.title} />
@@ -30,6 +30,7 @@ export default function Post({ page, blocks }) {
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);
+
   return {
     paths: database.map((page) => ({ params: { slug: page.id } })),
     fallback: true,

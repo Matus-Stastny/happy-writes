@@ -1,5 +1,6 @@
 import { Text } from "./Text";
 import { Fragment } from "react";
+import Image from "next/image";
 
 const renderBlock = (block) => {
   const { type, id } = block;
@@ -65,7 +66,7 @@ const renderBlock = (block) => {
       const caption = ""; // value.caption ? value.caption[0].rich_text : "";
       return (
         <figure>
-          <img src={src} alt={caption} />
+          <Image src={src} alt={caption} />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );
